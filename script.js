@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   function loadPage(path) {
     let file = "/pages" + path + ".html";
-    if (path === "/") file = "/pages/index.html"; // Default content
+    if (path === "/") file = "/index.html"; // Default content
 
     fetch(file)
       .then(res => res.text())
