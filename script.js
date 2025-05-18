@@ -1,7 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   function loadPage(path) {
+    if (path === "/") {
+      // Directly use inner HTML for default
+      document.getElementById("content").innerHTML = `
+        <h2>Welcome to Home!</h2>
+        <p>This is default content.</p>
+      `;
+      history.pushState(null, "", "/");
+      return;
+    }
+
     let file = "/pages" + path + ".html";
-    if (path === "/") file = "/index.html"; // Default content
 
     fetch(file)
       .then(res => res.text())
@@ -22,10 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Load correct content on first page load
   loadPage(location.pathname);
 
-  // Handle back/forward navigation
   window.addEventListener("popstate", () => {
     loadPage(location.pathname);
   });
