@@ -1,102 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About</title>
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
-      background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
+      background: linear-gradient(135deg, #f0f4ff, #ffffff);
       color: #333;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .intro {
-      background: linear-gradient(to right, #4f46e5, #3b82f6);
+      background: linear-gradient(to right, #667eea, #764ba2);
       color: white;
       text-align: center;
-      padding: 5rem 1rem;
+      padding: 100px 20px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
     .intro h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
     }
 
     .intro p {
-      font-size: 1.25rem;
-    }
-
-    .team {
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-
-    .team h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .team-members {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .member {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      width: 200px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .member:hover {
-      transform: translateY(-5px);
-    }
-
-    .member img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .mission {
-      padding: 4rem 1rem;
-      background: #f7f7fa;
-      text-align: center;
-    }
-
-    .mission h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .mission p {
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto;
     }
 
-    .contact {
-      padding: 4rem 1rem;
+    .team h2,
+    .mission h2,
+    .contact h2 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
       text-align: center;
+      color: #333;
     }
 
-    .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .member {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .member::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: url('https://i.pravatar.cc/100') center/cover;
+      margin: 0 auto 20px;
+    }
+
+    .mission p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .contact form {
@@ -104,38 +97,57 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 20px;
     }
 
     .contact input,
     .contact textarea {
-      padding: 1rem;
+      padding: 15px;
       border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1rem;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+      transition: border-color 0.3s ease;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      border-color: #764ba2;
+      outline: none;
     }
 
     .contact button {
-      background-color: #3b82f6;
-      color: white;
-      padding: 0.75rem;
+      padding: 15px;
       font-size: 1rem;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
     }
 
     .contact button:hover {
-      background-color: #2563eb;
+      background: linear-gradient(to right, #5a67d8, #6b46c1);
     }
 
     footer {
-      background-color: #222;
-      color: #eee;
+      background-color: #333;
+      color: #ddd;
       text-align: center;
-      padding: 1rem;
+      padding: 20px;
       font-size: 0.9rem;
+      border-top: 3px solid #764ba2;
+    }
+
+    @media (max-width: 768px) {
+      .members {
+        flex-direction: column;
+        align-items: center;
+      }
+      .intro h1 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
@@ -143,24 +155,21 @@
 
   <section class="intro">
     <h1>About Us</h1>
-    <p>We are building the future with innovation and creativity.</p>
+    <p>We are building the future with innovation, creativity, and technology that empowers people.</p>
   </section>
 
   <section class="team">
     <h2>Our Team</h2>
-    <div class="team-members">
+    <div class="members">
       <div class="member">
-        <img src="https://i.pravatar.cc/150?img=1" alt="Alice">
         <h3>Alice</h3>
         <p>Product Designer</p>
       </div>
       <div class="member">
-        <img src="https://i.pravatar.cc/150?img=2" alt="Bob">
         <h3>Bob</h3>
         <p>Lead Developer</p>
       </div>
       <div class="member">
-        <img src="https://i.pravatar.cc/150?img=3" alt="Clara">
         <h3>Clara</h3>
         <p>Marketing Lead</p>
       </div>
@@ -169,14 +178,14 @@
 
   <section class="mission">
     <h2>Our Mission</h2>
-    <p>To innovate, inspire, and lead the world into a smarter, more connected future.</p>
+    <p>To innovate, inspire, and lead the world into a smarter, more connected future through human-centered design and advanced technology.</p>
   </section>
 
   <section class="contact">
     <h2>Contact Us</h2>
     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email" required />
       <textarea placeholder="Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
