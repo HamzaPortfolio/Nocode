@@ -5,6 +5,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About</title>
+  <style>
+    /* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* HEADINGS */
+h1, h2 {
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* GRID & FLEX UTILITIES */
+.grid, .members, .images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* CARDS & TEAM MEMBERS */
+.card, .member {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover, .member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* GALLERY */
+.images img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.images img:hover {
+  transform: scale(1.05);
+}
+
+/* CTA & BUTTON */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* FORM */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+  font-style: italic;
+  color: #555;
+  background: #eef1f5;
+  padding: 20px;
+  border-left: 5px solid #007bff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .grid, .members, .images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .member {
+    width: 90%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+    
+  </style>
 </head>
 <body>
 
