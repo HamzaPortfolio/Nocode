@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About</title>
-  <link rel="stylesheet" href="./about.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <section class="intro">
-    <h1>About Us</h1>
-    <p>We are building the future.</p>
-  </section>
+  <section class="intro text-center py-12 bg-white shadow">
+    <h1 class="text-4xl font-bold mb-4">About Us</h1>
+    <p class="text-lg text-gray-600">We are building the future.</p>
+  </section>
 
-  <section class="team">
-    <h2>Our Team</h2>
-    <div class="members">
-      <div class="member">Alice</div>
-      <div class="member">Bob</div>
-    </div>
-  </section>
+  <section class="team py-12 px-4 md:px-16 bg-gray-100">
+    <h2 class="text-3xl font-semibold text-center mb-8">Our Team</h2>
+    <div class="members flex flex-col md:flex-row justify-center gap-6">
+      <div class="member bg-white p-6 rounded-lg shadow text-center text-xl font-medium">Alice</div>
+      <div class="member bg-white p-6 rounded-lg shadow text-center text-xl font-medium">Bob</div>
+    </div>
+  </section>
 
-  <section class="mission">
-    <h2>Our Mission</h2>
-    <p>To innovate and inspire.</p>
-  </section>
+  <section class="mission py-12 px-4 md:px-16 bg-white">
+    <h2 class="text-3xl font-semibold text-center mb-4">Our Mission</h2>
+    <p class="text-center text-gray-700 text-lg max-w-2xl mx-auto">To innovate and inspire.</p>
+  </section>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Email" />
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+  <section class="contact py-12 px-4 md:px-16 bg-gray-100">
+    <h2 class="text-3xl font-semibold text-center mb-8">Contact Us</h2>
+    <form class="max-w-xl mx-auto space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <textarea placeholder="Message" class="w-full px-4 py-2 border border-gray-300 rounded h-32 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send</button>
+    </form>
+  </section>
 
-  <footer>
-    <p>© 2025 YourBrand | All Rights Reserved</p>
-  </footer>
+  <footer class="bg-white py-6 text-center text-sm text-gray-500 border-t">
+    <p>© 2025 YourBrand | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
